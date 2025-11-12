@@ -28,9 +28,12 @@
         "ll" = "ls -l";
         "la" = "ls -a";
         ".." = "cd ..";
-        "re" = "sudo nixos-rebuild switch --flake ~/cardinalsnest --upgrade-all";
-        "dr" = "sudo nixos-rebuild dry-build --flake ~/cardinalsnest --upgrade-all";
-        "c" = "cd ~/cardinalsnest";
+        "re" = "sudo nixos-rebuild switch --flake ~/nixrepo --upgrade-all";
+        "dr" = "sudo nixos-rebuild dry-build --flake ~/nixrepo --upgrade-all";
+        "cdr" = "cd ~/nixrepo";
+        "vr" = "vim ~/nixrepo";
+        "nfu" = "cd ~/nixrepo && sudo nix flake update && cd";
+        "acp" = "cd ~/nixrepo && git add . && git commit && git push && cd";
       };
 
       oh-my-zsh = {
