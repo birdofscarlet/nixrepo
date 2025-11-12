@@ -16,16 +16,15 @@
     enable = true;
     capSysNice = true;
   };
-  environment.systemPackages = with pkgs;
-  [
+  environment.systemPackages = with pkgs; [
     mangohud
     gamescope
   ];
 
   services = {
-    xserver  = {
+    xserver = {
       enable = true;
-      videoDrivers = [ "amdgpu" ];
+      videoDrivers = ["amdgpu"];
     };
   };
 
@@ -37,5 +36,4 @@
   };
 
   environment.variables.AMD_VULKAN_ICD = "RADV";
-
 }

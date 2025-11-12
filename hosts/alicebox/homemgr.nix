@@ -44,8 +44,6 @@
     swayidle.enable = true;
   };
 
-
-
   home.packages = with pkgs; [
     vmware-workstation
     gh

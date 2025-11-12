@@ -13,6 +13,10 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "cardinal";
-    extraGroups = ["networkmanager" "wheel" "adbusers"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "adbusers"
+    ];
   };
 }

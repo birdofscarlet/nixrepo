@@ -40,7 +40,6 @@ sudo nixos-rebuild switch --flake ~/mysystem
       inputs.dgop.follows = "dgop";
       inputs.dms-cli.follows = "dms-cli";
     };
-
   };
 
   #-----------------------------------------------------------#
@@ -52,51 +51,45 @@ sudo nixos-rebuild switch --flake ~/mysystem
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    pkgs =
-      import nixpkgs
-      {
-        inherit system;
+    pkgs = import nixpkgs {
+      inherit system;
 
-        config = {
-          allowUnfree = true;
-        };
+      config = {
+        allowUnfree = true;
       };
+    };
   in {
     nixosConfigurations = {
-      alicebox =
-        nixpkgs.lib.nixosSystem
-        {
-          specialArgs = {inherit inputs system;};
-          modules = [
-            ./hosts/alicebox/configuration.nix
-            inputs.stylix.nixosModules.stylix
-            inputs.spicetify-nix.nixosModules.default
-            home-manager.nixosModules.home-manager
-            inputs.niri.nixosModules.niri
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.cardinal = import ./hosts/alicebox/homemgr.nix;
-              home-manager.sharedModules = [
-                inputs.dankMaterialShell.homeModules.dankMaterialShell.default
-                inputs.nixcord.homeModules.nixcord
-              ];
-            }
-          ];
-        };
+      alicebox = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs system;};
+        modules = [
+          ./hosts/alicebox/configuration.nix
+          inputs.stylix.nixosModules.stylix
+          inputs.spicetify-nix.nixosModules.default
+          home-manager.nixosModules.home-manager
+          inputs.niri.nixosModules.niri
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.cardinal = import ./hosts/alicebox/homemgr.nix;
+            home-manager.sharedModules = [
+              inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+              inputs.nixcord.homeModules.nixcord
+            ];
+          }
+        ];
+      };
     };
 
     homeConfigurations = {
       homeConfigurations = {
-        "alicebox" =
-          home-manager.lib.homeManagerConfiguration
-          {
-            pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-            extraSpecialArgs = {inherit inputs;};
-            modules = [
-              ./hosts/alicebox/homemgr.nix
-            ];
-          };
+        "alicebox" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = {inherit inputs;};
+          modules = [
+            ./hosts/alicebox/homemgr.nix
+          ];
+        };
       };
     };
   };

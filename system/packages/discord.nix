@@ -15,7 +15,7 @@
       themeLinks = [
         "https://luckfire.github.io/amoled-cord/src/amoled-cord.css"
       ];
-      enabledThemes = [ "amoled-cord.css" ];
+      enabledThemes = ["amoled-cord.css"];
       frameless = true; # Set some Vencord options
       plugins = {
         alwaysExpandRoles.enable = true;

@@ -9,20 +9,18 @@
   programs = {
     xwayland.enable = true;
     niri.enable = true;
-    niri.package = pkgs.niri.overrideAttrs
-    (o: {
+    niri.package = pkgs.niri.overrideAttrs (o: {
       doCheck = false;
     });
   };
-  
+
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   services.xserver = {
     enable = true;
-    };
+  };
 
-  
   services.displayManager.defaultSession = "niri";
   services = {
     libinput.enable = true;

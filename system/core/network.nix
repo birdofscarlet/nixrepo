@@ -10,7 +10,6 @@
   networking = {
     hostName = "alicebox";
 
-
     networkmanager.enable = true;
     firewall.enable = true;
     firewall.checkReversePath = false;
