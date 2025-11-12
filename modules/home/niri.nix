@@ -308,10 +308,10 @@
         // See the binds section below for more spawn examples.
 
         // This line starts waybar, a commonly used bar for Wayland compositors.
-        spawn-at-startup "waybar"
+        // spawn-at-startup "dms run"
 
         // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-        // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+        spawn-sh-at-startup "dms run"
 
         hotkey-overlay {
             // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.

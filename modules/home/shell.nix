@@ -34,6 +34,7 @@
         "vr" = "vim ~/nixrepo";
         "nfu" = "cd ~/nixrepo && sudo nix flake update && cd";
         "acp" = "cd ~/nixrepo && git add . && git commit && git push && cd";
+        "ncg" = "sudo nix-collect-garbage -d && re";
       };
 
       oh-my-zsh = {

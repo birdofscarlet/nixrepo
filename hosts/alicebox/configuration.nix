@@ -25,6 +25,7 @@
     ../../modules/system/services.nix
     ../../modules/system/stylix.nix
     ../../modules/system/users.nix
+    ../../modules/home/spotify.nix # we gotta load this here for whatever reason
 
 
     # TODO: get this shit out of here v
