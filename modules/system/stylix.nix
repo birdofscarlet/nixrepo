@@ -6,7 +6,7 @@
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/windows-95.yaml";
-    image = ../cardinal/walls/1.jpg;
+    # image = ../cardinal/walls/1.jpg;
     imageScalingMode = "fit";
     polarity = "dark";
 

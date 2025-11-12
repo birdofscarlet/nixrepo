@@ -5,7 +5,7 @@
   inputs,
   ...
 }:
-#------ configuration specific to my desktop PC ------#
+
 {
   ###########################
   #    HOME CONFIGURATION   #
@@ -17,12 +17,13 @@
   home.stateVersion = "24.05";
 
   imports = [
-    ../../system/packages/discord.nix
-    ../../system/core/shell.nix
-    ../../system/packages/git.nix
-    ../../system/core/niri.nix
+    ../../modules/home/discord.nix
+    ../../modules/home/shell.nix
+    ../../modules/home/git.nix
+    ../../modules/home/niri.nix
   ];
 
+  # TODO: all this fuckery can probably get moved somewhere else
   programs = {
     git.enable = true;
     alacritty.enable = true;
@@ -33,16 +34,7 @@
     dankMaterialShell.enable = true;
   };
 
-  services = {
-    wpaperd.enable = true;
-    mako = {
-      enable = true;
-      settings = {
-        default-timeout = 8000;
-      };
-    };
-    swayidle.enable = true;
-  };
+  #TODO? maybe put this somewhere else too but idk
 
   home.packages = with pkgs; [
     vmware-workstation

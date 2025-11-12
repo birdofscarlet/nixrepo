@@ -71,7 +71,7 @@ sudo nixos-rebuild switch --flake ~/mysystem
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.cardinal = import ./hosts/alicebox/homemgr.nix;
+            home-manager.users.cardinal = import ./hosts/alicebox/home.nix;
             home-manager.sharedModules = [
               inputs.dankMaterialShell.homeModules.dankMaterialShell.default
               inputs.nixcord.homeModules.nixcord
@@ -87,7 +87,7 @@ sudo nixos-rebuild switch --flake ~/mysystem
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = {inherit inputs;};
           modules = [
-            ./hosts/alicebox/homemgr.nix
+            ./hosts/alicebox/home.nix
           ];
         };
       };

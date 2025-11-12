@@ -17,11 +17,6 @@
     allowUnsupportedSystem = true;
   };
 
-  home-manager = {
-    backupFileExtension = "bak";
-  };
 
-  services.gvfs.enable = true;
-  services.udisks2.enable = true;
-  services.devmon.enable = true;
+  system.stateVersion = "24.11";
 }
