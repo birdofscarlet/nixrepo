@@ -42,7 +42,21 @@
         theme = "bureau";
       };
 
-      initContent = "hyfetch";
+      initContent = "hyfetch --args\"=-c examples/7.jsonc\"";
     };
+
+    hyfetch = {
+      settings = {
+        mode = "rgb";
+        preset = "transfeminine";
+        backend = "fastfetch";
+        args = "-c examples/7.jsonc";
+        color_align = {
+          type = "horizontal";
+          mode = "horizontal";
+        };
+      };
+    };
+
   };
 }
