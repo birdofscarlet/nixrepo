@@ -24,6 +24,8 @@ sudo nixos-rebuild switch --flake ~/mysystem
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
     dgop = {
       url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,6 +50,7 @@ sudo nixos-rebuild switch --flake ~/mysystem
     self,
     nixpkgs,
     home-manager,
+    chaotic,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -68,6 +71,7 @@ sudo nixos-rebuild switch --flake ~/mysystem
           inputs.spicetify-nix.nixosModules.default
           home-manager.nixosModules.home-manager
           inputs.niri.nixosModules.niri
+          chaotic.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

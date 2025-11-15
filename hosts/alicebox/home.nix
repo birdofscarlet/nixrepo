@@ -42,15 +42,18 @@
     git-credential-manager
     libsecret
     kdePackages.kate
+    appimage-run
     qbittorrent
     hyfetch
+    nixfmt-rfc-style
+    emacs
     fastfetch
     ranger
     pcmanfm
     proton-pass
     aseprite
     audacity
-    protonvpn-gui
+    # protonvpn-gui this shit is just broken now?
     wireguard-tools
     gimp
     obs-studio

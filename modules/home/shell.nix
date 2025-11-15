@@ -28,7 +28,9 @@
         "ll" = "ls -l";
         "la" = "ls -a";
         ".." = "cd ..";
-        "re" = "nfu && sudo nixos-rebuild switch --flake ~/nixrepo --upgrade-all";
+        "re" = "sudo nixos-rebuild switch --flake ~/nixrepo";
+	"reup" = "sudo nixos-rebuild switch --flake ~/nixrepo --upgrade-all";
+	"reupf" = "nfu && sudo nixos-rebuild switch --flake ~nixrepo --upgrade-all";
         "dr" = "sudo nixos-rebuild dry-build --flake ~/nixrepo --upgrade-all";
         "cdr" = "cd ~/nixrepo";
         "vr" = "vim ~/nixrepo";
