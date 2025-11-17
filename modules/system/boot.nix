@@ -6,15 +6,12 @@
 }: {
   boot = {
     loader = {
+      efi.canTouchEfiVariables = true;
       systemd-boot = {
         enable = true;
         configurationLimit = 5;
       };
 
-      efi.canTouchEfiVariables = true;
-    };
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
-      kernelPackages = pkgs.linuxPackages_cachyos;
-
-  };
 }

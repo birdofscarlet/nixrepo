@@ -39,6 +39,7 @@
 
   home.packages = with pkgs; [
     vmware-workstation
+    open-vm-tools
     gh
     git-credential-manager
     libsecret
@@ -48,8 +49,6 @@
     hyfetch
     nixfmt-rfc-style
     fastfetch
-    ranger
-    pcmanfm
     proton-pass
     aseprite
     audacity
