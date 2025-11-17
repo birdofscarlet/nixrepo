@@ -37,6 +37,8 @@
         "nfu" = "cd ~/nixrepo && sudo nix flake update && cd";
         "acp" = "cd ~/nixrepo && git add . && git commit && git push && cd";
         "ncg" = "sudo nix-collect-garbage -d && re";
+	"e" = "emacsclient -nw";
+	
       };
 
       oh-my-zsh = {

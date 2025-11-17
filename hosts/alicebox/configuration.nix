@@ -26,7 +26,7 @@
     ../../modules/system/stylix.nix
     ../../modules/system/users.nix
     ../../modules/home/spotify.nix # we gotta load this here for whatever reason
-
+    ../../modules/system/keyd.nix
 
     # TODO: get this shit out of here v
     inputs.home-manager.nixosModules.home-manager
