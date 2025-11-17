@@ -21,6 +21,7 @@
     ../../modules/home/shell.nix
     ../../modules/home/git.nix
     ../../modules/home/niri.nix
+    ../../modules/home/emacs.nix
   ];
 
   # TODO: all this fuckery can probably get moved somewhere else
@@ -46,7 +47,6 @@
     qbittorrent
     hyfetch
     nixfmt-rfc-style
-    emacs
     fastfetch
     ranger
     pcmanfm

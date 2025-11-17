@@ -33,7 +33,6 @@ sudo nixos-rebuild switch --flake ~/mysystem
 
     dms-cli = {
       url = "github:AvengeMedia/danklinux";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     dankMaterialShell = {
