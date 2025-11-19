@@ -6,7 +6,11 @@ services.emacs = {
   enable = true;
   package = with pkgs; (
   (emacsPackagesFor emacs).emacsWithPackages (
-    epkgs: [ epkgs.elcord ]
+    epkgs: [
+    epkgs.elcord
+    epkgs.vterm
+    epkgs.magit
+    ]
   )
 );
 };

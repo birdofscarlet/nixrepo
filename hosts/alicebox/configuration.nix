@@ -27,6 +27,7 @@
     ../../modules/system/users.nix
     ../../modules/home/spotify.nix # we gotta load this here for whatever reason
     ../../modules/system/keyd.nix
+#    ../../modules/system/storagedrive.nix # uncomment this if you have that second drive free
 
     # TODO: get this shit out of here v
     inputs.home-manager.nixosModules.home-manager
