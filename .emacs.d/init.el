@@ -8,12 +8,20 @@
 (tooltip-mode -1)
 (set-fringe-mode 10)
 (menu-bar-mode -1)
+
 (column-number-mode)
 (global-display-line-numbers-mode t)
+(setq display-line-numbers 'relative)
+
+(dolist (mode '(org-mode-hook
+		term-mode-hook
+		shell-mode-hook
+		eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (setq visible-bell t) ;; shut the fuck up
 
-(load-theme 'wombat)
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 ;; now we get to the real tasty bits
 (require 'package)
@@ -83,4 +91,23 @@
 (require 'elcord)
 (elcord-mode)
 
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package which-key
+  :init (which-key-mode)
+  :diminish (which-key-mode)
+  :config
+  (setq which-key-idle-delay 0.3)) ;; chamge this higher as you get more comfortable
+
+(use-package all-the-icons)
+
+(use-package counsel
+  :bind (("M-x" . counsel-M-x)
+         ("C-x b" . counsel-ibuffer)
+         ("C-x C-f" . counsel-find-file)
+         :map minibuffer-local-map
+         ("C-r" . 'counsel-minibuffer-history)))
+
+(global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
 
