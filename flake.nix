@@ -39,7 +39,6 @@ sudo nixos-rebuild switch --flake ~/mysystem
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.dgop.follows = "dgop";
-      inputs.dms-cli.follows = "dms-cli";
     };
   };
 
@@ -50,6 +49,7 @@ sudo nixos-rebuild switch --flake ~/mysystem
     nixpkgs,
     home-manager,
     chaotic,
+    emacs-overlay,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -97,3 +97,6 @@ sudo nixos-rebuild switch --flake ~/mysystem
     };
   };
 }
+
+
+
