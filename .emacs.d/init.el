@@ -44,6 +44,9 @@
 
 (use-package command-log-mode)
 
+ (set-frame-parameter (selected-frame) 'alpha-background 75)
+(add-to-list 'default-frame-alist '(alpha-background . 75))
+
 (use-package doom-themes
   :ensure t
   :custom
@@ -62,7 +65,7 @@
   ;; or for treemacs users
   (doom-themes-treemacs-config)
   ;; Corrects (and improves) org-mode's native fontification.
-  (doom-themes-org-config))
+  (doom-themes-org-config) )
 
 (use-package command-log-mode)
 
@@ -153,7 +156,13 @@
   :init
   (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
   :config
-  (lsp-enable-which-key-integration t))
+  (lsp-enable-which-key-integration t)
+  (with-eval-after-load 'lsp-mode
+  (lsp-register-client
+    (make-lsp-client :new-connection (lsp-stdio-connection "nixd")
+                     :major-modes '(nix-mode)
+                     :priority 0
+                     :server-id 'nixd))))
 
 
 (use-package lsp-ui
@@ -171,3 +180,10 @@
 
 (use-package lsp-treemacs
   :after lsp)
+
+(with-eval-after-load 'lsp-mode
+  (lsp-register-client
+    (make-lsp-client :new-connection (lsp-stdio-connection "nixd")
+                     :major-modes '(nix-mode)
+                     :priority 0
+                     :server-id 'nixd)))
