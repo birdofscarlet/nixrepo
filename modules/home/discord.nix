@@ -7,7 +7,6 @@
   stylix.targets.nixcord.enable = false;
   programs.nixcord = {
     enable = true;
-    vesktop.enable = true;
     config = {
       autoUpdate = true;
       autoUpdateNotification = true;
@@ -20,11 +19,10 @@
       plugins = {
         alwaysExpandRoles.enable = true;
         alwaysTrust.enable = true;
-        betterFolders.showFolderIcon = "always";
+        betterFolders.showFolderIcon = 2;
         betterGifAltText.enable = true;
         betterSettings.enable = true;
-        blurNSFW.enable = true;
-        clearURLs.enable = true;
+        clearUrLs.enable = true;
         clientTheme.enable = true;
         clientTheme.color = "000000";
         expressionCloner.enable = true;

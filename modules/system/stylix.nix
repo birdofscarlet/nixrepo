@@ -47,4 +47,8 @@
       };
     };
   };
+
+  home-manager.users.cardinal = {
+    stylix.targets.firefox.enable = false;
+  };
 }
