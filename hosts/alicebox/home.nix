@@ -51,7 +51,7 @@
     proton-pass
     aseprite
     audacity
-    # protonvpn-gui this shit is just broken now?
+    protonvpn-gui
     wireguard-tools
     gimp
     obs-studio
