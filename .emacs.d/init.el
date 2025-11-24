@@ -44,8 +44,8 @@
 
 (use-package command-log-mode)
 
-(set-frame-parameter nil 'alpha-background 75) ; For current frame
-(add-to-list 'default-frame-alist '(alpha-background . 75)) ; For all new frames henceforth
+(set-frame-parameter nil 'alpha-background 85) ; For current frame
+(add-to-list 'default-frame-alist '(alpha-background . 85)) ; For all new frames henceforth
 
 (use-package doom-themes
   :ensure t
@@ -187,3 +187,16 @@
                      :major-modes '(nix-mode)
                      :priority 0
                      :server-id 'nixd)))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(elcord-idle-message "Editing *real-life*")
+ '(elcord-show-small-icon nil)
+ '(package-selected-packages
+   '(all-the-icons base16-theme command-log-mode counsel-projectile
+		   doom-modeline doom-themes elcord helpful lsp-ivy
+		   lsp-treemacs lsp-ui magit nix-mode
+		   rainbow-delimiters)))
