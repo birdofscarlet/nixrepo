@@ -7,6 +7,7 @@
 }:
 
 {
+  networking.hostName = "alicebox";
   # TODO: what to do with these two troublemakers??
   hardware.cpu.amd.updateMicrocode = true;
   virtualisation.vmware.host.enable = true;
