@@ -14,7 +14,7 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "dungeondraft";
-  version = "1.1.0.6";
+  version = "1.2.0.1";
 
   nativeBuildInputs = [makeWrapper];
 

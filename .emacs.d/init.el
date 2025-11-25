@@ -44,8 +44,8 @@
 
 (use-package command-log-mode)
 
-(set-frame-parameter nil 'alpha-background 85) ; For current frame
-(add-to-list 'default-frame-alist '(alpha-background . 85)) ; For all new frames henceforth
+(set-frame-parameter nil 'alpha-background 80) ; For current frame
+(add-to-list 'default-frame-alist '(alpha-background . 80)) ; For all new frames henceforth
 
 (use-package doom-themes
   :ensure t

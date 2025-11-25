@@ -82,6 +82,26 @@ sudo nixos-rebuild switch --flake ~/mysystem
           }
         ];
       };
+       alicepad = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs system;};
+        modules = [
+          ./hosts/alicebox/configuration.nix
+          inputs.stylix.nixosModules.stylix
+          inputs.spicetify-nix.nixosModules.default
+          home-manager.nixosModules.home-manager
+          inputs.niri.nixosModules.niri
+          chaotic.nixosModules.default
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.cardinal = import ./hosts/alicepad/home.nix;
+            home-manager.sharedModules = [
+              inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+              inputs.nixcord.homeModules.nixcord
+            ];
+          }
+        ];
+      };
     };
 
     homeConfigurations = {
@@ -91,6 +111,14 @@ sudo nixos-rebuild switch --flake ~/mysystem
           extraSpecialArgs = {inherit inputs;};
           modules = [
             ./hosts/alicebox/home.nix
+          ];
+        };
+        
+         "alicepad" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = {inherit inputs;};
+          modules = [
+            ./hosts/alicepad/home.nix
           ];
         };
       };
