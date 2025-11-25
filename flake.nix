@@ -85,7 +85,7 @@ sudo nixos-rebuild switch --flake ~/mysystem
        alicepad = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs system;};
         modules = [
-          ./hosts/alicebox/configuration.nix
+          ./hosts/alicepad/configuration.nix
           inputs.stylix.nixosModules.stylix
           inputs.spicetify-nix.nixosModules.default
           home-manager.nixosModules.home-manager
