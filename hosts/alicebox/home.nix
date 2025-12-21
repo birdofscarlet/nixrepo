@@ -37,16 +37,21 @@
   #TODO? maybe put this somewhere else too but idk
 
   home.packages = with pkgs; [
+    deadlock-mod-manager
     vmware-workstation
     open-vm-tools
     gh
     git-credential-manager
     libsecret
-    kdePackages.kate
+    davinci-resolve
+    love
+    kdePackages.dolphin
     appimage-run
     qbittorrent
+    slade
     hyfetch
     nixfmt-rfc-style
+    lua-language-server
     fastfetch
     proton-pass
     aseprite
