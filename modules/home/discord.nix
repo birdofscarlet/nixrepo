@@ -22,7 +22,6 @@
         betterFolders.showFolderIcon = 2;
         betterGifAltText.enable = true;
         betterSettings.enable = true;
-        clearUrLs.enable = true;
         clientTheme.enable = true;
         clientTheme.color = "000000";
         expressionCloner.enable = true;

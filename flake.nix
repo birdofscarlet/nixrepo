@@ -31,10 +31,9 @@ sudo nixos-rebuild switch --flake ~/mysystem
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dankMaterialShell = {
+    dank-material-shell = {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.dgop.follows = "dgop";
     };
   };
 
@@ -72,7 +71,7 @@ sudo nixos-rebuild switch --flake ~/mysystem
             home-manager.useUserPackages = true;
             home-manager.users.cardinal = import ./hosts/alicebox/home.nix;
             home-manager.sharedModules = [
-              inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+              inputs.dank-material-shell.homeModules.dank-material-shell
               inputs.nixcord.homeModules.nixcord
             ];
           }
@@ -92,7 +91,7 @@ sudo nixos-rebuild switch --flake ~/mysystem
             home-manager.useUserPackages = true;
             home-manager.users.cardinal = import ./hosts/alicepad/home.nix;
             home-manager.sharedModules = [
-              inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+              inputs.dank-material-shell.homeModules.dank-material-shell.default
               inputs.nixcord.homeModules.nixcord
             ];
           }

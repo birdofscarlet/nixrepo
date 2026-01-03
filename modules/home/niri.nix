@@ -115,7 +115,7 @@
             position x=0 y=0
         }
 
-        output "DP-2" {
+        output "DP-3" {
             // Uncomment this line to disable this output.
             // off
 
